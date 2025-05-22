@@ -1,6 +1,6 @@
 ## Installation
 1. Install [GNU Stow](https://www.gnu.org/software/stow/)
-2. Install Python client for Neovim. In ArchLinux this is done as such `pacman -S python-neovim`
+2. Install Python client for Neovim. In ArchLinux this is done as such `pacman -S python-pynvim`
 3. Install the minimalist Vim plugin manager ([vim-plug](https://github.com/junegunn/vim-plug))
 ```
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
