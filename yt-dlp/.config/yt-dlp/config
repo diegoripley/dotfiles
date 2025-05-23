@@ -1,0 +1,15 @@
+-o ~/Videos/yt-dlp/%(title)s.%(ext)s
+# Filename should only have ASCII characters
+--restrict-filenames
+# Embed thumbnail in video as cover art
+--embed-thumbnail
+# Embed metadata to the video file's xattrs (using Dublin Core and XDG standards)
+--xattrs
+# Embed subtitles in the video
+--embed-subs
+# Download with aria2c
+--downloader "aria2c"
+# Impersonates any client in the request
+--impersonate ""
+# Sub languages to download
+--sub-langs "en,es"
