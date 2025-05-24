@@ -21,5 +21,9 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
-#
+
+# Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+
+export PATH=~/.local/bin:$PATH
 alias yt-dlp="/home/ripd/micromamba/envs/yt-dlp/bin/yt-dlp"
