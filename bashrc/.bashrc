@@ -25,5 +25,12 @@ unset __mamba_setup
 # Node Version Manager
 source /usr/share/nvm/init-nvm.sh
 
+# Add to PATH
 export PATH=~/.local/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
+
+# Aliases
 alias yt-dlp="/home/ripd/micromamba/envs/yt-dlp/bin/yt-dlp"
+
+# Start up tmux every time I open up a terminal
+tmux
