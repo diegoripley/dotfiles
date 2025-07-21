@@ -3,13 +3,21 @@
 --restrict-filenames
 # Embed thumbnail in video as cover art
 --embed-thumbnail
+# Always use mkv as the container format
+--remux-video mkv
 # Embed metadata to the video file's xattrs (using Dublin Core and XDG standards)
 --xattrs
-# Embed subtitles in the video
---embed-subs
+# Embed metadata to the video file. Also embeds chapters/infojson if present
+--embed-metadata
 # Download with aria2c
 --downloader "aria2c"
 # Impersonates any client in the request
 --impersonate ""
+# Write automatically generated subtitle file
+--write-auto-subs
+# Convert the subtitles to srt
+--convert-subs=srt
 # Sub languages to download
 --sub-langs "en,es"
+# Embed subtitles in the video
+--embed-subs
