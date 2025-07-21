@@ -28,6 +28,7 @@ source /usr/share/nvm/init-nvm.sh
 # Add to PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
+export PATH=/var/lib/snapd/snap/bin:$PATH
 
 # Aliases
 alias yt-dlp="/home/ripd/micromamba/envs/yt-dlp/bin/yt-dlp"
