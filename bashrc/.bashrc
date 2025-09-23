@@ -32,3 +32,4 @@ export PATH=/var/lib/snapd/snap/bin:$PATH
 
 # Aliases
 alias yt-dlp="/home/ripd/micromamba/envs/yt-dlp/bin/yt-dlp"
+alias whisper="/home/ripd/micromamba/envs/whisper/bin/whisper"
