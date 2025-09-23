@@ -18,6 +18,6 @@
 # Convert the subtitles to srt
 --convert-subs=srt
 # Sub languages to download
---sub-langs "en,es"
+--sub-langs "en,es,fr"
 # Embed subtitles in the video
 --embed-subs
