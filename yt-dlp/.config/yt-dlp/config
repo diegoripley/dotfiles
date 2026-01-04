@@ -1,23 +1,23 @@
--o ~/Videos/yt-dlp/%(title)s.%(ext)s
+-o ~/Videos/yt-dlp/%(title)s-%(id)s.%(ext)s
 # Filename should only have ASCII characters
 --restrict-filenames
-# Embed thumbnail in video as cover art
---embed-thumbnail
 # Always use mkv as the container format
 --remux-video mkv
-# Embed metadata to the video file's xattrs (using Dublin Core and XDG standards)
---xattrs
+# Embed thumbnail in video as cover art
+--embed-thumbnail
+# Convert the thumbnail to webp
+--convert-thumbnails webp
 # Embed metadata to the video file. Also embeds chapters/infojson if present
 --embed-metadata
+# embed-metadata does not seem to attach info.json by default
+--embed-info-json
+# Embed metadata to the video file's xattrs (using Dublin Core and XDG standards)
+--xattrs
+# Sub languages to download
+--sub-langs "en.*"
+# Embed subtitles in the video
+--embed-subs
 # Download with aria2c
 --downloader "aria2c"
 # Impersonates any client in the request
 --impersonate ""
-# Write automatically generated subtitle file
---write-auto-subs
-# Convert the subtitles to srt
---convert-subs=srt
-# Sub languages to download
---sub-langs "en,es,fr"
-# Embed subtitles in the video
---embed-subs
