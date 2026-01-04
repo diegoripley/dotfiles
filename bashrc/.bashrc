@@ -23,7 +23,7 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 # Node Version Manager
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 
 # Add to PATH
 export PATH=~/.local/bin:$PATH
@@ -32,4 +32,4 @@ export PATH=/var/lib/snapd/snap/bin:$PATH
 
 # Aliases
 alias yt-dlp="/home/ripd/micromamba/envs/yt-dlp/bin/yt-dlp"
-alias whisper="/home/ripd/micromamba/envs/whisper/bin/whisper"
+alias garmindb_cli.py="/home/ripd/micromamba/envs/garmindb/bin/garmindb_cli.py"
