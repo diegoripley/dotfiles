@@ -9,6 +9,7 @@ font pango: Noto Sans Regular 12
 set $mod Mod4
 
 # Display outputs
+#set $monitor_1 DP-1-2
 set $monitor_1 DP-1-2
 set $laptop_monitor eDP-2
 
@@ -222,36 +223,50 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 ##########################################
 
 # Workspace names
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
+set $ws1 "1: 1 - Research"
+set $ws2 "2: 2 - Code"
+set $ws3 "3: 3 - Messaging"
 set $ws4 "4:"
-set $ws5 "5: 5 - chat"
+set $ws5 "5:"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: 10 - Misc"
 
 # Workspace output assignments
-workspace $ws2 output $monitor_1
-workspace $ws5 output $laptop_monitor
+# TODO: This should be conditional if this monitor is available
+workspace $ws1 output $monitor_1
+workspace $ws2 output $laptop_monitor
+workspace $ws3 output $laptop_monitor
+workspace $ws10 output $laptop_monitor
 
 # Window assignments (use xprop | grep WM_CLASS to find class)
-assign [class="firefox"] $ws2
-assign [class="Google-chrome"] $ws2
-assign [class="ghostty"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="betterbird"] $ws2
+# 1 - Research
+assign [class="firefox"] $ws1
+assign [class="Google-chrome"] $ws1
+assign [class="ghostty"] $ws1
 
-# Chat apps
-assign [class="TelegramDesktop"] $ws5
-assign [class="Slack"] $ws5
-assign [class="Brave-browser"] $ws5
+# 2 - Code
+assign [class="ghostty"] $ws2
+assign [class="Code"] $ws2
+
+# 3 - Messaging
+assign [class="eu.betterbird.Betterbird"] $ws3
+assign [class="TelegramDesktop"] $ws3
+assign [class="Slack"] $ws3
+assign [class="Brave-browser"] $ws3
+
+# 10 - Misc
+assign [class="Opendeck"] $ws10
+assign [class="obs"] $ws10
+assign [class="qnvsm"] $ws10 # NVIDIA system monitor Qt
+assign [class="org.gnome.Nautilus"] $ws10
+
 
 # Auto-focus on open
 for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
+for_window [class=org.gnome.Nautilus] focus
 for_window [class=TelegramDesktop] focus
 
 #############################################
@@ -268,7 +283,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # Wallpaper
-exec_always --no-startup-id feh --zoom fill --randomize ~/Pictures/Wallpaper/*
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*
 
 # Disable DPMS power saving
 exec --no-startup-id xset -dpms
@@ -353,4 +368,4 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 #####################
 
 # 4K Monitor 01 right of Laptop Monitor
-exec_always xrandr --output $monitor_1 --mode 3840x2160 --right-of $laptop_monitor
+exec_always xrandr --output $monitor_1 --mode 3840x2160 --above $laptop_monitor --output $laptop_monitor --auto
