@@ -1,0 +1,73 @@
+i3wm Keybindings Cheat Sheet
+=============================
+
+ = Super/Windows key
+
+## General
++Return          start ghostty terminal
++q               kill focused window
++Shift+c         reload configuration file
++Shift+r         restart i3 inplace
++l               lock screen (blur)
++Shift+e         exit/power menu
+
+## Application Launchers
++d               application menu (rofi)
++t               window switcher (rofi)
++w               launch Firefox
+Print            screenshot (flameshot)
+
+## Window Focus
++j               focus left
++k               focus down
++b               focus up
++o               focus right
++Left/Down/Up/Right   (arrow key alternatives)
+
+## Move Focused Window
++Shift+j         move left
++Shift+k         move down
++Shift+b         move up
++Shift+o         move right
++Shift+Left/Down/Up/Right   (arrow key alternatives)
+
+## Layout
++h               split horizontal
++v               split vertical
++f               fullscreen toggle
++s               layout stacking
++g               layout tabbed
++e               layout toggle split
+
+## Floating
++Shift+space     toggle tiling/floating
++space           toggle focus tiling/floating
++mouse drag      move floating window
+
+## Workspaces
++1-0             switch to workspace 1-10
++Shift+1-0       move container to workspace 1-10
++Tab             next workspace
++Shift+Tab       previous workspace
++Shift+n         open new empty workspace
+
+## Resize Mode
++r               enter resize mode
+  Arrow keys     resize window
+  Enter/Escape   exit resize mode
+
+## Focus
++a               focus parent container
+
+## Multimedia
+XF86Audio keys   volume up/down/mute (with OSD)
++XF86Audio keys  granular volume (1% steps)
+XF86Brightness   screen brightness up/down
+XF86AudioMicMute mic mute toggle
+XF86AudioPlay    play/pause
+XF86AudioNext    next track
+XF86AudioPrev    previous track
+
+## Other
++p               switch audio port (headphones)
++Shift+p         power profiles menu (rofi)
