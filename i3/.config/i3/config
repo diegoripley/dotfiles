@@ -226,7 +226,7 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 set $ws1 "1: 1 - Research"
 set $ws2 "2: 2 - Code"
 set $ws3 "3: 3 - Messaging"
-set $ws4 "4:"
+set $ws4 "4: 4 - Notes"
 set $ws5 "5:"
 set $ws6 "6"
 set $ws7 "7"
@@ -256,6 +256,11 @@ assign [class="eu.betterbird.Betterbird"] $ws3
 assign [class="TelegramDesktop"] $ws3
 assign [class="Slack"] $ws3
 assign [class="Brave-browser"] $ws3
+assign [class="firefox-developer-edition"] $ws3
+
+# 4 - Notes
+assign [class="obsidian"] $ws4
+ 
 
 # 10 - Misc
 assign [class="Opendeck"] $ws10
