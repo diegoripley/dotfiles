@@ -23,7 +23,7 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 # Node Version Manager
-#source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 
 # Add to PATH
 export PATH=~/.local/bin:$PATH

@@ -1,0 +1,19 @@
+#!/bin/sh
+# ==========================
+# HiDPI / Font Scaling
+# ==========================
+
+# Load Xresources (Xft.dpi, subpixel rendering)
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+
+# GTK scaling — use DPI scaling rather than integer scaling
+# GDK_SCALE=2 would double everything (too large); instead use DPI-based scaling
+export GDK_DPI_SCALE=1.0
+export GDK_SCALE=1
+
+# Qt scaling — match the Xft.dpi value (140)
+export QT_FONT_DPI=140
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+# Cursor size (match Xresources)
+export XCURSOR_SIZE=32

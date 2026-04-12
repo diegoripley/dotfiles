@@ -1,0 +1,13 @@
+! ==========================
+! DPI Settings for 4K (DP-2)
+! ==========================
+Xft.dpi: 140
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! Xcursor size (scaled for HiDPI)
+Xcursor.size: 32

@@ -3,15 +3,17 @@
 #######################
 
 # Font for window titles and bar fallback
-font pango: Noto Sans Regular 12
+font pango: Noto Sans Regular 14
 
 # Mod key (Super/Windows)
 set $mod Mod4
 
 # Display outputs
 #set $monitor_1 DP-1-2
-set $monitor_1 DP-1-2
-set $laptop_monitor eDP-2
+#set $monitor_1 DP-1-2
+set $monitor_1 HDMI-1
+set $monitor_2 DP-2
+#set $laptop_monitor eDP-2
 
 #####################
 # workspace layout: #
@@ -284,8 +286,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Autostart .desktop files
 exec --no-startup-id dex --autostart --environment i3
 
-# Display setup
-exec --no-startup-id ~/.screenlayout/monitor.sh
+# Load Xresources (DPI, font rendering)
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+
+# Display setup (monitor layout + color calibration)
+exec_always --no-startup-id ~/.screenlayout/monitor.sh
 
 # Wallpaper
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*
@@ -340,7 +345,7 @@ client.urgent		$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 ############################################
 
 bar {
-    font pango: Noto Sans Regular 10
+    font pango: Noto Sans Regular 14
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position bottom
     tray_padding 0
@@ -372,5 +377,7 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 # multi-monitor:    #
 #####################
 
-# 4K Monitor 01 right of Laptop Monitor
-exec_always xrandr --output $monitor_1 --mode 3840x2160 --above $laptop_monitor --output $laptop_monitor --auto
+# Monitor layout is now handled by ~/.screenlayout/monitor.sh (loaded in autostart section)
+# which also applies color calibration (colorspace, max bpc, broadcast RGB)
+#exec_always xrandr --output $monitor_1 --mode 3840x2160 --above $laptop_monitor --output $laptop_monitor --auto
+#exec_always xrandr --output $monitor_1 --mode 3840x2160 --left-of $monitor_2 --output $monitor_2 --mode 3840x2160 --rate 239.99
