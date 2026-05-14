@@ -11,8 +11,8 @@ set $mod Mod4
 # Display outputs
 #set $monitor_1 DP-1-2
 #set $monitor_1 DP-1-2
-set $monitor_1 HDMI-1
-set $monitor_2 DP-2
+set $monitor_1 DP-1
+set $monitor_2 HDMI-1
 #set $laptop_monitor eDP-2
 
 #####################
@@ -290,7 +290,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 
 # Display setup (monitor layout + color calibration)
-exec_always --no-startup-id ~/.screenlayout/monitor.sh
+exec_always --no-startup-id ~/.config/i3/scripts/monitor.sh
 
 # Wallpaper
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*
@@ -372,12 +372,3 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 
 bindsym $mod+t exec --no-startup-id rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
-
-#####################
-# multi-monitor:    #
-#####################
-
-# Monitor layout is now handled by ~/.screenlayout/monitor.sh (loaded in autostart section)
-# which also applies color calibration (colorspace, max bpc, broadcast RGB)
-#exec_always xrandr --output $monitor_1 --mode 3840x2160 --above $laptop_monitor --output $laptop_monitor --auto
-#exec_always xrandr --output $monitor_1 --mode 3840x2160 --left-of $monitor_2 --output $monitor_2 --mode 3840x2160 --rate 239.99
